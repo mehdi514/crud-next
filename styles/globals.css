@@ -6,21 +6,118 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+/* styles.css */
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 4rem;
 }
 
-* {
-  box-sizing: border-box;
+.loader {
+  margin-top: 1rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+.add-button {
+  margin-left: 1rem;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 1rem;
+  padding: 1rem 4rem;
+}
+
+.user-card {
+  padding: 1rem;
+  background-color: var(--surface-50) !important;
+  box-shadow: none !important;
+  border: 0.3px solid rgb(211, 204, 204) !important;
+}
+
+.button-group {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1rem;
+}
+
+.update-button,
+.delete-button {
+  margin-right: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .card-container {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
-  body {
-    color: white;
-    background: black;
+}
+
+.update-button,
+.delete-button {
+  margin-right: 0.5rem !important;
+}
+
+.update-modal {
+  width: 500px !important; /* Adjust the width as per your requirement */
+}
+
+.update-modal-content {
+  padding: 1.5rem;
+}
+
+.p-grid .p-col-12:not(:first-child) {
+  margin-top: 1rem;
+}
+
+/* Loader */
+.loader-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader-spinner {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
   }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.p-button-label {
+  font-weight: normal !important;
+}
+
+.p-card-content {
+  padding: 0 !important;
+}
+
+.p-card-content h3 {
+  margin: 0 !important;
+}
+
+.p-dialog-content {
+  padding: 1.5rem 1.5rem 1.5rem 1.5rem !important;
+}
+
+.p-fluid .p-inputtext {
+  margin: 5px 0;
 }
